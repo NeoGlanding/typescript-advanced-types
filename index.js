@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 var ihsan = {
     name: "Ihsan",
     education: 'Vocational High School',
@@ -104,4 +105,14 @@ var adding = function (p1, p2) {
     return p1 + p2;
 };
 var testAdding = adding(2, 3);
-console.log(Math.round(testAdding));
+// console.log(Math.round(testAdding))
+// 7. Optional chaining
+var myData = {
+    name: 'Ihsan',
+    skills: {
+        frontend: ['React JS', 'VueJs', 'Angular'],
+        backend: ['Node.js', 'Hibernate', 'Spring', 'SpringBoot', 'ExpressJS', 'PHP', 'Django', 'Flask'],
+        mobile: ['Flutter', 'Dart', 'React Native', 'Kotlin', 'Java', 'Swift']
+    }
+};
+console.log((_a = myData.skills) === null || _a === void 0 ? void 0 : _a.backend);

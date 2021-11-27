@@ -183,4 +183,16 @@ const adding: ReturnNumberOrString = (p1: any, p2: any) => {
 }
 
 const testAdding = adding(2, 3);
-console.log(Math.round(testAdding))
+// console.log(Math.round(testAdding))
+
+// 7. Optional chaining
+const myData = {
+    name: 'Ihsan',
+    skills: {
+        frontend: ['React JS', 'VueJs', 'Angular'],
+        // backend: ['Node.js', 'Hibernate', 'Spring', 'SpringBoot', 'ExpressJS', 'PHP', 'Django', 'Flask'],
+        mobile: ['Flutter', 'Dart', 'React Native', 'Kotlin', 'Java', 'Swift']
+    }
+}
+
+console.log(myData.skills?.backend)
