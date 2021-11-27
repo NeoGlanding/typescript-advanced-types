@@ -13,13 +13,13 @@ var hafizh = {
 function addition(param1, param2) {
     // Typeguard in If statement
     if (typeof param1 === 'number' || typeof param2 === 'number') {
-        console.log(+param1 + +param2);
+        // console.log(+param1 + +param2)
     }
     if (typeof param1 === 'string' || typeof param2 === 'string') {
-        console.log("".concat(param1.toString(), " ").concat(param2.toString()));
+        // console.log(`${param1.toString()} ${param2.toString()}`)
     }
     if ((typeof param1 === 'number' && typeof param2 === 'string') || (typeof param1 === 'string' && typeof param2 === 'number')) {
-        console.log('Enter value with same data types');
+        // console.log('Enter value with same data types')
     }
 }
 addition(1, 2);
@@ -27,13 +27,13 @@ addition('Muhammad', 'Ihsan');
 addition(1, '3');
 // Typeguard in Object
 function employeeInfo(obj) {
-    console.log(obj.name);
+    // console.log(obj.name);
     if ('education' in obj && 'division' in obj) {
-        console.log('Education: ' + obj.education);
-        console.log('Division: ' + obj.division);
+        // console.log('Education: ' + obj.education);
+        // console.log('Division: ' + obj.division)
     }
     if ('impact' in obj) {
-        console.log('Impact: ' + obj.impact);
+        // console.log('Impact: ' + obj.impact)
     }
 }
 var eko = {
@@ -52,7 +52,7 @@ var Teacher = /** @class */ (function () {
     function Teacher() {
     }
     Teacher.prototype.info = function () {
-        console.log('She/He is a Teacher');
+        // console.log('She/He is a Teacher')
     };
     return Teacher;
 }());
@@ -60,10 +60,10 @@ var UniversityTeacher = /** @class */ (function () {
     function UniversityTeacher() {
     }
     UniversityTeacher.prototype.info = function () {
-        console.log('She/He is a University Teacher');
+        // console.log('She/He is a University Teacher')
     };
     UniversityTeacher.prototype.where = function () {
-        console.log('She/he is teaching at some university');
+        // console.log('She/he is teaching at some university')
     };
     return UniversityTeacher;
 }());
@@ -87,10 +87,21 @@ function movingSpeed(param) {
             speed = param.movingSpeed;
             break;
     }
-    console.log('Moving at speed: ', speed);
+    // console.log('Moving at speed: ', speed)
 }
 movingSpeed({ type: 'bird', flyingSpeed: 20 });
 movingSpeed({ type: 'cheetah', movingSpeed: 25 });
-// 4. Type Casting
-var userData = document.getElementById('getinput');
-console.log(userData.value);
+var testIndexed = {
+    id: 1,
+    awkward: 'tow',
+    dd: 2
+};
+console.log(testIndexed);
+var adding = function (p1, p2) {
+    if (typeof p1 === 'string' || typeof p2 === 'string') {
+        return p1.toString() + p2.toString();
+    }
+    return p1 + p2;
+};
+var testAdding = adding(2, 3);
+console.log(Math.round(testAdding));

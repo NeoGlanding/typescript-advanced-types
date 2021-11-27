@@ -46,13 +46,13 @@ type unknownEmployee = Volunteer | Employee
 function addition(param1: numberOrString, param2: numberOrString): void {
     // Typeguard in If statement
     if (typeof param1 === 'number' || typeof param2 === 'number') {
-        console.log(+param1 + +param2)
+        // console.log(+param1 + +param2)
     }
     if (typeof param1 === 'string' || typeof param2 === 'string') {
-        console.log(`${param1.toString()} ${param2.toString()}`)
+        // console.log(`${param1.toString()} ${param2.toString()}`)
     }
     if ((typeof param1 === 'number' && typeof param2 === 'string') || (typeof param1 === 'string' && typeof param2 === 'number')) {
-        console.log('Enter value with same data types')
+        // console.log('Enter value with same data types')
     }
 }
 
@@ -62,13 +62,13 @@ addition(1,'3');
 
 // Typeguard in Object
 function employeeInfo(obj: unknownEmployee) {
-    console.log(obj.name);
+    // console.log(obj.name);
     if ('education' in obj && 'division' in obj) {
-        console.log('Education: ' + obj.education);
-        console.log('Division: ' + obj.division)
+        // console.log('Education: ' + obj.education);
+        // console.log('Division: ' + obj.division)
     }
     if ('impact' in obj) {
-        console.log('Impact: ' + obj.impact)
+        // console.log('Impact: ' + obj.impact)
     }
 }
 
@@ -89,17 +89,17 @@ employeeInfo(galih)
 // Typeguards in Class
 class Teacher {
     info() {
-        console.log('She/He is a Teacher')
+        // console.log('She/He is a Teacher')
     }
 }
 
 class UniversityTeacher {
     info() {
-        console.log('She/He is a University Teacher')
+        // console.log('She/He is a University Teacher')
     }
 
     where() {
-        console.log('She/he is teaching at some university')
+        // console.log('She/he is teaching at some university')
     }
 }
 
@@ -142,12 +142,45 @@ function movingSpeed(param: animal) {
             speed = param.movingSpeed;
             break;
     }
-    console.log('Moving at speed: ', speed)
+    // console.log('Moving at speed: ', speed)
 }
 
 movingSpeed({type: 'bird', flyingSpeed: 20});
 movingSpeed({type: 'cheetah', movingSpeed: 25});
 
 // 4. Type Casting
-const userData = document.getElementById('getinput')! as HTMLInputElement;
-console.log(userData.value)
+// const userData = document.getElementById('getinput')! as HTMLInputElement;
+// console.log(userData.value)
+
+// 5. Indexed Properties
+interface Indexed {
+    id: number;
+    [properties: string]: number | string
+}
+
+const testIndexed: Indexed = {
+    id: 1,
+    awkward: 'tow',
+    dd: 2
+}
+
+console.log(testIndexed)
+
+
+// 6. Function Overload
+
+type ReturnNumberOrString = {
+    (p1: number, p2: number): number;
+    (p1: string, p2: string): string;
+}
+
+const adding: ReturnNumberOrString = (p1: any, p2: any) => {
+    if (typeof p1 === 'string' || typeof p2 === 'string') {
+        return p1.toString() + p2.toString()
+    }
+
+    return p1 + p2;
+}
+
+const testAdding = adding(2, 3);
+console.log(Math.round(testAdding))
