@@ -77,3 +77,17 @@ var onno = new Teacher();
 var danu = new UniversityTeacher();
 isYouTeacher(onno);
 isYouTeacher(danu);
+function movingSpeed(param) {
+    var speed;
+    switch (param.type) {
+        case 'bird':
+            speed = param.flyingSpeed;
+            break;
+        case 'cheetah':
+            speed = param.movingSpeed;
+            break;
+    }
+    console.log('Moving at speed: ', speed);
+}
+movingSpeed({ type: 'bird', flyingSpeed: 20 });
+movingSpeed({ type: 'cheetah', movingSpeed: 25 });
