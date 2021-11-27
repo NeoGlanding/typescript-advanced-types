@@ -147,3 +147,7 @@ function movingSpeed(param: animal) {
 
 movingSpeed({type: 'bird', flyingSpeed: 20});
 movingSpeed({type: 'cheetah', movingSpeed: 25});
+
+// 4. Type Casting
+const userData = document.getElementById('getinput')! as HTMLInputElement;
+console.log(userData.value)
