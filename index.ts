@@ -195,4 +195,4 @@ const myData = {
     }
 }
 
-console.log(myData.skills?.backend)
+// console.log(myData.skills?.backend)
